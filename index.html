@@ -193,7 +193,6 @@
     import {initializeApp} from "https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js";
     import {getDatabase, ref, push} from "https://www.gstatic.com/firebasejs/9.22.0/firebase-database.js";
 
-    // Firebase configuration
     const firebaseConfig = {
         apiKey: "AIzaSyCpUanqbzEYFTEYBro4zUXQQg_kpLCK7Nw",
         authDomain: "penetrum-website.firebaseapp.com",
@@ -205,22 +204,18 @@
         measurementId: "G-XQ0JWNQFBJ"
     };
 
-    // Initialize Firebase
     const app = initializeApp(firebaseConfig);
     const database = getDatabase(app);
 
-    // Function to log link clicks
     async function logLinkClick(product) {
         try {
             const userAgent = navigator.userAgent;
             const timestamp = new Date().toISOString();
 
-            // Get user IP
             const ipResponse = await fetch('https://api.ipify.org?format=json');
             const ipData = await ipResponse.json();
             const ip = ipData.ip;
 
-            // Log data to Firebase
             await push(ref(database, 'linkClicks'), {
                 product: product,
                 ip: ip,
@@ -234,7 +229,6 @@
         }
     }
 
-    // Attach event listeners
     document.getElementById('data-center-link').addEventListener('click', () => logLinkClick('Data Center'));
     document.getElementById('ai-link').addEventListener('click', () => logLinkClick('AI Training Data Sets'));
 
