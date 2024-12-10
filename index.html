@@ -18,19 +18,23 @@
             flex-direction: column;
             min-height: 100vh;
         }
+
         header {
             background-color: #111;
             color: #e0e0e0;
             padding: 20px 0;
         }
+
         header img {
             max-width: 100px;
             margin-bottom: 10px;
         }
+
         section {
             padding: 20px;
             flex: 1;
         }
+
         .products {
             display: flex;
             justify-content: center;
@@ -38,89 +42,108 @@
             padding: 20px;
             flex-wrap: wrap;
         }
+
         .product-card {
+            display: block; /* Make the entire card a clickable block */
             background-color: #2a2a2a;
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
             max-width: 200px;
             text-align: center;
-            transition: transform 0.2s ease-in-out;
+            transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
+            text-decoration: none; /* Remove underline */
+            color: inherit; /* Inherit text color */
         }
+
         .product-card:hover {
             transform: scale(1.05);
+            background-color: #1f1f1f;
         }
+
         .product-card img {
             max-width: 100%;
             border-radius: 8px;
+            margin-bottom: 10px;
         }
+
         .product-card h3 {
             margin: 10px 0;
             color: #ffffff;
         }
+
         .product-card a {
             display: block;
             margin-top: 10px;
             color: #007BFF;
             text-decoration: none;
         }
+
         .product-card a:hover {
             color: #1e90ff;
         }
+
         .contact {
-    background-color: #2a2a2a;
-    padding: 20px;
-    margin: 20px auto;
-    border-radius: 8px;
-    max-width: 600px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Centers child elements horizontally */
-}
+            background-color: #2a2a2a;
+            padding: 20px;
+            margin: 20px auto;
+            border-radius: 8px;
+            max-width: 600px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Centers child elements horizontally */
+        }
+
         .contact h2 {
             color: #ffffff;
             margin-bottom: 10px;
         }
+
         .contact p {
             margin-bottom: 20px;
             color: #e0e0e0;
         }
-.contact textarea {
-    width: 90%; /* Adjust the width to align better */
-    max-width: 500px; /* Prevent it from becoming too wide */
-    height: 120px;
-    margin-bottom: 20px;
-    padding: 15px;
-    border: 2px solid #444;
-    background-color: #1e1e1e;
-    color: #e0e0e0;
-    border-radius: 8px;
-    font-family: Arial, sans-serif;
-    font-size: 1em;
-    resize: none;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
-}
-.contact textarea:focus {
-    outline: none;
-    border-color: #007BFF;
-}
-.contact button {
-    padding: 10px 20px;
-    font-size: 1em;
-    background-color: #007BFF;
-    color: #ffffff;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
-    transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out;
-}
-.contact button:hover {
-    background-color: #0056b3;
-    transform: scale(1.05);
-}
+
+        .contact textarea {
+            width: 90%; /* Adjust the width to align better */
+            max-width: 500px; /* Prevent it from becoming too wide */
+            height: 120px;
+            margin-bottom: 20px;
+            padding: 15px;
+            border: 2px solid #444;
+            background-color: #1e1e1e;
+            color: #e0e0e0;
+            border-radius: 8px;
+            font-family: Arial, sans-serif;
+            font-size: 1em;
+            resize: none;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        .contact textarea:focus {
+            outline: none;
+            border-color: #007BFF;
+        }
+
+        .contact button {
+            padding: 10px 20px;
+            font-size: 1em;
+            background-color: #007BFF;
+            color: #ffffff;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+            transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out;
+        }
+
+        .contact button:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+        }
+
         footer {
             background-color: #111;
             color: #e0e0e0;
@@ -142,20 +165,19 @@
 <section>
     <h2>Our Offerings</h2>
     <div class="products">
-        <div class="product-card">
+        <a href="https://backyardbandwidth.com" target="_blank" class="product-card" id="data-center-link">
             <img src="assets/bybw.png" alt="Data Center">
             <h3>Data Center</h3>
-            <a href="https://backyardbandwidth.com" target="_blank" id="data-center-link">Learn More</a>
-        </div>
-        <div class="product-card">
+        </a>
+        <a href="mailto:penetrumcorp@gmail.com?subject=Interest%20in%20AI%20Training%20Data" class="product-card"
+           id="ai-link">
             <img src="assets/m_logo.png" alt="AI Training">
-            <h3>AI Training Data Sets</h3>
-            <a href="mailto:penetrumcorp@gmail.com?subject=Interest%20in%20AI%20Training%20Data" id="ai-link">Learn More</a>
-        </div>
+            <h3>AI/ML Training Data Sets</h3>
+        </a>
     </div>
 </section>
+
 <br><br>
-<!-- Contact Section -->
 <section class="contact">
     <h2>Contact Us</h2>
     <p>Have any questions or need assistance? Send us a message below:</p>
@@ -167,11 +189,57 @@
     <p>&copy; <span id="current-year"></span> Penetrum LLC. All rights reserved.</p>
 </footer>
 
-<script>
-    // Update the current year in footer
+<script type="module">
+    import {initializeApp} from "https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js";
+    import {getDatabase, ref, push} from "https://www.gstatic.com/firebasejs/9.22.0/firebase-database.js";
+
+    // Firebase configuration
+    const firebaseConfig = {
+        apiKey: "AIzaSyCpUanqbzEYFTEYBro4zUXQQg_kpLCK7Nw",
+        authDomain: "penetrum-website.firebaseapp.com",
+        databaseURL: "https://penetrum-website-default-rtdb.firebaseio.com",
+        projectId: "penetrum-website",
+        storageBucket: "penetrum-website.appspot.com",
+        messagingSenderId: "1092790794443",
+        appId: "1:1092790794443:web:e5a0d3c283eee20fa1c34e",
+        measurementId: "G-XQ0JWNQFBJ"
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const database = getDatabase(app);
+
+    // Function to log link clicks
+    async function logLinkClick(product) {
+        try {
+            const userAgent = navigator.userAgent;
+            const timestamp = new Date().toISOString();
+
+            // Get user IP
+            const ipResponse = await fetch('https://api.ipify.org?format=json');
+            const ipData = await ipResponse.json();
+            const ip = ipData.ip;
+
+            // Log data to Firebase
+            await push(ref(database, 'linkClicks'), {
+                product: product,
+                ip: ip,
+                userAgent: userAgent,
+                timestamp: timestamp
+            });
+
+            console.log('Link click logged successfully:', {product, ip, userAgent, timestamp});
+        } catch (error) {
+            console.error('Error logging link click:', error);
+        }
+    }
+
+    // Attach event listeners
+    document.getElementById('data-center-link').addEventListener('click', () => logLinkClick('Data Center'));
+    document.getElementById('ai-link').addEventListener('click', () => logLinkClick('AI Training Data Sets'));
+
     document.getElementById('current-year').textContent = new Date().getFullYear();
 
-    // Function to send an email using mailto with the message from the text box
     function sendEmail() {
         const messageBody = document.getElementById('message-body').value.trim();
         if (messageBody === '') {
@@ -184,6 +252,5 @@
         window.location.href = mailtoLink;
     }
 </script>
-
 </body>
 </html>
