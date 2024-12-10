@@ -181,7 +181,7 @@
     <h2>Contact Us</h2>
     <p>Have any questions or need assistance? Send us a message below:</p>
     <textarea id="message-body" placeholder="Type your message here..."></textarea>
-    <button onclick="sendEmail()">Send Message</button>
+    <button id="submit-button-contact" onclick="sendEmail()">Send Message</button>
 </section>
 
 <footer>
@@ -230,6 +230,7 @@
 
     document.getElementById('data-center-link').addEventListener('click', () => logLinkClick('Data Center'));
     document.getElementById('ai-link').addEventListener('click', () => logLinkClick('AI Training Data Sets'));
+    document.getElementById('submit-button-contact').addEventListener('click', () => logLinkClick('Contact Button'))
 
     document.getElementById('current-year').textContent = new Date().getFullYear();
 
