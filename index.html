@@ -1,198 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Penetrum LLC</title>
-    <link rel="icon" href="assets/penetrum_logo.ico" type="image/png">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #1e1e1e;
-            color: #e0e0e0;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
+    <link rel="icon" href="assets/penetrum_logo.ico" type="image/png" />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-900 text-gray-200 flex flex-col min-h-screen font-sans">
+    <!-- Header -->
+    <header class="bg-gray-800 py-6 text-center shadow-md">
+      <img src="assets/penetrum_logo.png" alt="Penetrum LLC Logo" class="w-24 mx-auto mb-2" />
+      <h1 class="text-3xl font-bold">Penetrum LLC</h1>
+      <p class="text-sm italic text-gray-400">"Secure in Every Hand"</p>
+    </header>
 
-        header {
-            background-color: #111;
-            color: #e0e0e0;
-            padding: 20px 0;
-        }
-
-        header img {
-            max-width: 100px;
-            margin-bottom: 10px;
-        }
-
-        section {
-            padding: 20px;
-            flex: 1;
-        }
-
-        .products {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            padding: 20px;
-            flex-wrap: wrap;
-        }
-
-        .product-card {
-            display: block;
-            background-color: #2a2a2a;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-            max-width: 200px;
-            text-align: center;
-            transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
-            text-decoration: none;
-            color: inherit;
-        }
-
-        .product-card:hover {
-            transform: scale(1.05);
-            background-color: #1f1f1f;
-        }
-
-        .product-card img {
-            max-width: 100%;
-            border-radius: 8px;
-            margin-bottom: 10px;
-        }
-
-        .product-card h3 {
-            margin: 10px 0;
-            color: #ffffff;
-        }
-
-        .product-card a {
-            display: block;
-            margin-top: 10px;
-            color: #007BFF;
-            text-decoration: none;
-        }
-
-        .product-card a:hover {
-            color: #1e90ff;
-        }
-
-        .contact {
-            background-color: #2a2a2a;
-            padding: 20px;
-            margin: 20px auto;
-            border-radius: 8px;
-            max-width: 600px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .contact h2 {
-            color: #ffffff;
-            margin-bottom: 10px;
-        }
-
-        .contact p {
-            margin-bottom: 20px;
-            color: #e0e0e0;
-        }
-
-        .contact textarea {
-            width: 90%;
-            max-width: 500px;
-            height: 120px;
-            margin-bottom: 20px;
-            padding: 15px;
-            border: 2px solid #444;
-            background-color: #1e1e1e;
-            color: #e0e0e0;
-            border-radius: 8px;
-            font-family: Arial, sans-serif;
-            font-size: 1em;
-            resize: none;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
-        }
-
-        .contact textarea:focus {
-            outline: none;
-            border-color: #007BFF;
-        }
-
-        .contact button {
-            padding: 10px 20px;
-            font-size: 1em;
-            background-color: #007BFF;
-            color: #ffffff;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
-            transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out;
-        }
-
-        .contact button:hover {
-            background-color: #0056b3;
-            transform: scale(1.05);
-        }
-
-        footer {
-            background-color: #111;
-            color: #e0e0e0;
-            padding: 10px;
-            font-size: 0.9em;
-            text-align: center;
-            margin-top: auto;
-        }
-    </style>
-</head>
-<body>
-
-<header>
-    <img src="assets/penetrum_logo.png" alt="Penetrum LLC Logo">
-    <h1>Penetrum LLC</h1>
-    <p>"Secure in Every Hand"</p>
-</header>
-
-<section>
-    <h2>Our Offerings</h2>
-    <div class="products">
-        <a href="https://backyardbandwidth.com" target="_blank" class="product-card" id="data-center-link">
-            <img src="assets/bybw.png" alt="Data Center">
-            <h3>Data Center</h3>
+    <!-- Offerings -->
+    <section class="py-10 px-4 text-center">
+      <h2 class="text-2xl font-semibold mb-6">Our Offerings</h2>
+      <div class="flex justify-center flex-wrap gap-6">
+        <a href="https://backyardbandwidth.com" target="_blank" id="data-center-link" class="bg-gray-800 hover:bg-gray-700 transition-all rounded-lg shadow-md p-5 w-64 text-center">
+          <img src="assets/bybw.png" alt="Data Center" class="rounded-lg mb-4 w-full h-40 object-cover" />
+          <h3 class="text-xl font-semibold">Data Center</h3>
         </a>
-        <a href="mailto:penetrumcorp@gmail.com?subject=Interest%20in%20AI%20Training%20Data" class="product-card"
-           id="ai-link">
-            <img src="assets/m_logo.png" alt="AI Training">
-            <h3>AI/ML Training Data Sets</h3>
-        </a>
-    </div>
-</section>
+      </div>
+    </section>
 
-<br><br>
-<section class="contact">
-    <h2>Contact Us</h2>
-    <p>Have any questions or need assistance? Send us a message below:</p>
-    <textarea id="message-body" placeholder="Type your message here..."></textarea>
-    <button id="submit-button-contact" onclick="sendEmail()">Send Message</button>
-</section>
+    <!-- Contact Section -->
+    <section class="bg-gray-800 text-gray-100 py-10 px-6 mx-auto max-w-2xl rounded-lg shadow-md my-8" id="contact">
+      <h2 class="text-2xl font-semibold mb-2 text-center">Contact Us</h2>
+      <p class="text-center text-gray-400 mb-6">Have any questions or need assistance? Send us a message below:</p>
+      <textarea id="message-body" class="w-full p-4 h-32 rounded-md bg-gray-900 border border-gray-700 focus:outline-none focus:ring focus:border-blue-500 mb-4 resize-none" placeholder="Type your message here..."></textarea>
+      <button id="submit-button-contact" onclick="sendEmail()" class="block w-full bg-blue-600 hover:bg-blue-700 transition-colors text-white font-semibold py-3 rounded-md">Send Message</button>
+    </section>
 
-<footer>
-    <p>&copy; <span id="current-year"></span> Penetrum LLC. All rights reserved.</p>
-</footer>
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-center text-sm text-gray-400 py-4 mt-auto">
+      <p>&copy; <span id="current-year"></span> Penetrum LLC. All rights reserved.
+        <br><a href="disclosures.html" class="underline text-blue-400 hover:text-blue-500 ml-2">Public Disclosures</a>
+      </p>
+    </footer>
 
-<script type="module">
-    import {initializeApp} from "https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js";
-    import {getDatabase, ref, push} from "https://www.gstatic.com/firebasejs/9.22.0/firebase-database.js";
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js";
+      import { getDatabase, ref, push } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-database.js";
 
-    const firebaseConfig = {
+      const firebaseConfig = {
         apiKey: "AIzaSyCpUanqbzEYFTEYBro4zUXQQg_kpLCK7Nw",
         authDomain: "penetrum-website.firebaseapp.com",
         databaseURL: "https://penetrum-website-default-rtdb.firebaseio.com",
@@ -201,50 +54,40 @@
         messagingSenderId: "1092790794443",
         appId: "1:1092790794443:web:e5a0d3c283eee20fa1c34e",
         measurementId: "G-XQ0JWNQFBJ"
-    };
+      };
 
-    const app = initializeApp(firebaseConfig);
-    const database = getDatabase(app);
+      const app = initializeApp(firebaseConfig);
+      const database = getDatabase(app);
 
-    async function logLinkClick(product) {
+      async function logLinkClick(product) {
         try {
-            const userAgent = navigator.userAgent;
-            const timestamp = new Date().toISOString();
+          const userAgent = navigator.userAgent;
+          const timestamp = new Date().toISOString();
+          const ipResponse = await fetch('https://api.ipify.org?format=json');
+          const ipData = await ipResponse.json();
+          const ip = ipData.ip;
 
-            const ipResponse = await fetch('https://api.ipify.org?format=json');
-            const ipData = await ipResponse.json();
-            const ip = ipData.ip;
-
-            await push(ref(database, 'linkClicks'), {
-                product: product,
-                ip: ip,
-                userAgent: userAgent,
-                timestamp: timestamp
-            });
-
-            console.log('Link click logged successfully:', {product, ip, userAgent, timestamp});
+          await push(ref(database, 'linkClicks'), { product, ip, userAgent, timestamp });
         } catch (error) {
-            console.error('Error logging link click:', error);
+          console.error('Error logging link click:', error);
         }
-    }
+      }
 
-    document.getElementById('data-center-link').addEventListener('click', () => logLinkClick('Data Center'));
-    document.getElementById('ai-link').addEventListener('click', () => logLinkClick('AI Training Data Sets'));
-    document.getElementById('submit-button-contact').addEventListener('click', () => logLinkClick('Contact Button'))
+      document.getElementById('data-center-link').addEventListener('click', () => logLinkClick('Data Center'));
+      document.getElementById('submit-button-contact').addEventListener('click', () => logLinkClick('Contact Button'));
 
-    document.getElementById('current-year').textContent = new Date().getFullYear();
+      document.getElementById('current-year').textContent = new Date().getFullYear();
 
-    function sendEmail() {
+      window.sendEmail = function () {
         const messageBody = document.getElementById('message-body').value.trim();
-        if (messageBody === '') {
-            alert('Please enter a message before sending.');
-            return;
+        if (!messageBody) {
+          alert('Please enter a message before sending.');
+          return;
         }
         const email = 'penetrumcorp@gmail.com';
         const subject = 'Contact Us';
-        const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(messageBody)}`;
-        window.location.href = mailtoLink;
-    }
-</script>
-</body>
+        window.location.href = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(messageBody)}`;
+      };
+    </script>
+  </body>
 </html>

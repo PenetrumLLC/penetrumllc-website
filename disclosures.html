@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Disclosures</title>
+    <link rel="icon" href="assets/penetrum_logo.ico" type="image/png" />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-900 text-gray-200 flex flex-col min-h-screen font-sans">
+    <header class="bg-gray-800 py-6 text-center shadow-md">
+      <img src="assets/penetrum_logo.png" alt="Penetrum LLC Logo" class="w-24 mx-auto mb-2" />
+      <h1 class="text-3xl font-bold">Penetrum LLC</h1>
+      <p class="text-sm italic text-gray-400">"Secure in Every Hand"</p>
+    </header>
+
+    <main class="flex-grow px-6 py-12 max-w-3xl mx-auto">
+      <h2 class="text-2xl font-semibold text-center mb-8">Public Disclosures</h2>
+
+      <div id="disclosures" class="space-y-4"></div>
+    </main>
+
+    <footer class="bg-gray-800 text-center text-sm text-gray-400 py-4 mt-auto">
+      <p>&copy; <span id="current-year"></span> Penetrum LLC. All rights reserved.
+      </p>
+    </footer>
+
+    <script>
+      document.getElementById('current-year').textContent = new Date().getFullYear();
+
+      async function loadDisclosures() {
+        try {
+          const res = await fetch('assets/data/disclosures.json');
+          const data = await res.json();
+          const container = document.getElementById('disclosures');
+
+          Object.entries(data).forEach(([title, entry]) => {
+            const section = document.createElement('details');
+            section.className = 'bg-gray-800 rounded-md shadow-md p-4';
+
+            const summary = document.createElement('summary');
+            summary.className = 'cursor-pointer font-semibold text-lg';
+            summary.innerHTML = `
+              <div>
+                <span class="block">${title}</span>
+                <span class="text-sm text-gray-400">Entity: ${entry.abandoned_entity}</span><br/>
+                <span class="text-sm text-gray-400">Identifier: ${entry.entity_identifier}</span><br/>
+                <span class="text-sm text-gray-400">Shares: ${entry.total_compensation_abandoned}</span><br/>
+                <span class="text-sm text-gray-400">Estimated Value: ${entry.estimated_value}</span>
+              </div>
+            `;
+
+            const content = document.createElement('div');
+            content.className = 'mt-4 text-gray-300';
+            content.innerHTML = entry.notice;
+
+            section.appendChild(summary);
+            section.appendChild(content);
+            container.appendChild(section);
+          });
+        } catch (err) {
+          console.error('Error loading disclosures:', err);
+        }
+      }
+
+      loadDisclosures();
+    </script>
+  </body>
+</html>
